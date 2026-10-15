@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday!</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Gochi+Hand&family=Homemade+Apple&family=Playfair+Display:ital,wght@0,600;1,400&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#16335e;--blue:#3b78c4;--dot:#7fb0ea;--cream:#f4efe2}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#e9e2d0;font-family:'Gochi Hand',cursive;color:var(--navy)}
+#stage{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:center;overflow:hidden;background:var(--cream);
+  background-image:radial-gradient(var(--dot) 9px,transparent 10px);background-size:72px 72px;background-position:26px 26px;}
+#fr{position:absolute;left:50%;top:50%;width:1280px;height:720px;margin:-360px 0 0 -640px}
+.page{position:absolute;inset:0;display:none;animation:fade .7s}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.s{position:absolute;height:auto;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(10,30,70,.28));user-select:none}
+.bob{animation:bob 4s ease-in-out infinite}.bob2{animation:bob 5.2s ease-in-out infinite reverse}
+@keyframes bob{50%{transform:translateY(-12px) rotate(var(--r,0deg))}}
+.gp{position:absolute;background:
+ repeating-linear-gradient(0deg,rgba(59,100,170,.55) 0 26px,transparent 26px 52px),
+ repeating-linear-gradient(90deg,rgba(59,100,170,.55) 0 26px,transparent 26px 52px),#f8fafd;box-shadow:0 0 18px rgba(0,0,0,.18)}
+.torn-r{clip-path:polygon(0 0,100% 0,92% 14%,98% 30%,90% 48%,97% 66%,91% 84%,98% 100%,0 100%)}
+.torn-corner-l{clip-path:polygon(0 100%,100% 100%,94% 78%,74% 84%,56% 56%,30% 62%,0 28%)}
+.torn-corner{clip-path:polygon(100% 100%,0 100%,6% 78%,26% 84%,44% 56%,70% 62%,100% 28%)}
+.title{position:absolute;left:0;right:0;text-align:center;font:400 62px/1.1 'Caveat Brush','Gochi Hand',cursive;color:var(--navy);z-index:10;text-shadow:0 2px 0 rgba(255,255,255,.7)}
+.script{font-family:'Homemade Apple',cursive;font-size:52px}
+.btn{position:absolute;z-index:20;font:inherit;font-size:28px;padding:8px 34px;border:3px solid var(--navy);background:#fff;border-radius:40px;cursor:pointer;color:var(--navy);box-shadow:5px 5px 0 var(--blue);transition:.15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--blue)}
+.cloud{position:absolute;z-index:20;width:170px;height:92px;border-radius:60px;background:#b7d1ef;border:none;font:inherit;font-size:40px;color:var(--navy);cursor:pointer;box-shadow:inset 0 -8px 0 rgba(0,0,0,.12),0 6px 10px rgba(0,0,0,.18);transition:transform .15s,left .25s,top .25s}
+.cloud:hover{transform:scale(1.08)}
+.photo{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;height:100%;background:#c9d9ee center/cover;cursor:pointer;font-size:18px;color:#4a6285}
+.polaroid{position:absolute;background:#fff;padding:16px 16px 54px;box-shadow:0 14px 28px rgba(0,0,0,.32);z-index:4}
+.myboy{position:absolute;right:-30px;top:-34px;font:400 38px 'Caveat Brush';color:#fff;background:var(--blue);padding:2px 14px;transform:rotate(8deg);box-shadow:0 3px 6px rgba(0,0,0,.3);z-index:2}
+.tape{position:absolute;width:90px;height:28px;background:rgba(127,176,234,.75);z-index:6}
+.pf{position:absolute;background:#2b4a8a;padding:14px;box-shadow:0 14px 26px rgba(0,0,0,.35);z-index:4}
+.pf .photo{border:4px solid #fff}
+.paper{position:absolute;background:#f7f3e9;z-index:5;padding:46px 30px 22px;box-shadow:0 12px 26px rgba(0,0,0,.32);
+ clip-path:polygon(2% 0,98% 1%,100% 5%,97% 12%,100% 22%,98% 38%,100% 52%,97% 68%,100% 82%,98% 93%,95% 100%,4% 99%,0 92%,3% 80%,0 62%,3% 48%,0 30%,3% 15%,0 5%);
+ background-image:repeating-linear-gradient(transparent 0 27px,#d7e4f4 27px 28px)}
+.paper .in{height:100%;overflow:auto;font:italic 19px/28px 'Playfair Display',serif;text-align:left;color:#1d2433;padding-right:8px}
+.paper h3{font:400 32px 'Gochi Hand';font-style:normal;color:var(--navy);margin-bottom:2px}
+.paper p{margin-bottom:10px}
+.clip{position:absolute;left:50%;top:-14px;width:110px;height:46px;margin-left:-55px;background:#233a5e;border-radius:8px 8px 18px 18px;z-index:7;box-shadow:0 4px 6px rgba(0,0,0,.4)}
+.clip::after{content:'';position:absolute;left:36px;top:-12px;width:38px;height:20px;border:5px solid #8a97ab;border-bottom:0;border-radius:18px 18px 0 0}
+.film{position:absolute;background:#2d5ea3;padding:40px 18px 18px;display:flex;flex-direction:column;gap:16px;z-index:4;box-shadow:0 14px 26px rgba(0,0,0,.38);border-radius:4px;
+ background-image:radial-gradient(#e9f1fb 5px,transparent 6px);background-size:100% 30px}
+.film .ph{aspect-ratio:1/.78;border:4px solid #fff;background:#c9d9ee}
+#stage.bk{background-color:#fff;background-image:linear-gradient(#dfe3ea 1px,transparent 1px),linear-gradient(90deg,#dfe3ea 1px,transparent 1px);background-size:34px 34px}
+#cakeOut{position:absolute;inset:0;width:100%;opacity:0;transition:opacity .7s .3s}
+.out #cakeOut{opacity:1}
+.film .ph:nth-child(3){aspect-ratio:1/1}
+.film .ph:nth-child(3) .photo{background-position:50% 55%}
+.flame{position:absolute;width:15px;height:34px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(#fff 15%,#ffd34d 50%,#ff8a1f);transform-origin:bottom;animation:flick .25s infinite alternate;box-shadow:0 0 20px 8px rgba(255,170,40,.55);z-index:6}
+@keyframes flick{to{transform:scale(1.1,.9) rotate(5deg)}}
+.out .flame{display:none}
+.lt{position:absolute;z-index:6;font:600 14px/20px 'Nunito',sans-serif;color:#1d2a44;text-align:left;overflow:auto}
+.lt h3{font:800 26px 'Nunito',sans-serif;color:var(--navy);margin-bottom:4px}
+.lt p{margin-bottom:7px}
+.smoke{position:absolute;width:12px;height:70px;border-radius:12px;background:linear-gradient(#e6e6e6aa,transparent);opacity:0;filter:blur(4px);z-index:6}
+.out .smoke{animation:rise 3s forwards}
+@keyframes rise{0%{opacity:.9;transform:translateY(24px)}100%{opacity:0;transform:translateY(-100px) scaleX(3)}}
+.hint{position:absolute;left:0;right:0;bottom:34px;text-align:center;font-size:28px;opacity:.8;z-index:10}
+.gift{position:absolute;cursor:pointer;z-index:8;transition:.25s;text-align:center}
+.gift:hover{transform:translateY(-14px) scale(1.07) rotate(-2deg)}
+.gift img{display:block;width:100%;filter:drop-shadow(0 10px 12px rgba(10,30,70,.32))}
+.tag{display:inline-block;margin-top:10px;background:#a9c8ea;padding:6px 34px;font-size:30px;clip-path:polygon(0 0,100% 0,95% 50%,100% 100%,0 100%,5% 50%)}
+.journal{position:absolute;left:100px;top:46px;width:1080px;height:630px;background:#4a4a42;border-radius:26px;padding:14px;display:flex;z-index:3;box-shadow:0 26px 50px rgba(0,0,0,.5)}
+.jp{position:relative;flex:1;background:#faf7ef;background-image:linear-gradient(rgba(0,0,0,.03),transparent 14%,transparent 86%,rgba(0,0,0,.05))}
+.jl{border-radius:14px 0 0 14px;box-shadow:inset -18px 0 22px -14px rgba(0,0,0,.3)}
+.jr{border-radius:0 14px 14px 0;box-shadow:inset 18px 0 22px -14px rgba(0,0,0,.3)}
+.binder{position:absolute;top:270px;width:92px;height:108px;z-index:9;background:linear-gradient(90deg,#8a6a1c,#f0d985 40%,#b08d2e);border-radius:12px;box-shadow:0 8px 12px rgba(0,0,0,.4)}
+.binder::before{content:'';position:absolute;top:-20px;left:50%;width:40px;height:40px;margin-left:-20px;border:7px solid #caa63f;border-radius:50%;border-bottom-color:transparent}
+.note{position:absolute;background:#fff;font:600 16px/1.45 'Nunito',sans-serif;color:#1d2a44;padding:14px 16px;box-shadow:0 5px 12px rgba(0,0,0,.28);border:4px solid #fff}
+.n1{left:300px;top:36px;width:240px;transform:rotate(-3deg);z-index:3;background-image:repeating-linear-gradient(transparent 0 23px,#cfe0f7 23px 24px)}
+.n2{left:70px;bottom:36px;width:430px;background-color:#f6ecc3;background-image:radial-gradient(#8fb9ee 1.6px,transparent 2.2px);background-size:11px 11px;outline:2px dotted #6aa6e0;font-size:19px;transform:rotate(-1.5deg);z-index:3}
+.ph1{position:absolute;left:34px;top:34px;width:226px;height:240px;background:#1d4f9a;padding:12px;transform:rotate(-8deg);z-index:2;box-shadow:0 8px 16px rgba(0,0,0,.35);clip-path:polygon(0 8%,10% 0,50% 3%,92% 0,100% 12%,98% 90%,88% 100%,40% 97%,4% 100%,0 70%)}
+.ph2{position:absolute;left:278px;top:170px;width:230px;height:230px;background:#3b78c4;padding:14px;border-radius:50% 50% 46% 46%/46% 46% 50% 50%;transform:rotate(6deg);z-index:2;border:5px dotted #cfe3fb;box-shadow:0 8px 16px rgba(0,0,0,.35)}
+.ph1 .photo,.ph2 .photo{border:4px solid #fff;font-size:16px}.ph2 .photo{border-radius:44%;background-position:35% 50%}
+.mc{position:absolute;left:36px;top:300px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;z-index:4;transform:rotate(-4deg)}
+.mc b{background:#1d4f9a;color:#fff;font:800 24px/1 'Nunito',sans-serif;padding:4px 10px;box-shadow:0 3px 5px rgba(0,0,0,.3)}
+.mc b:nth-child(even){background:#fff;color:#1d4f9a;border:2px solid #1d4f9a}
+.bdboy{position:absolute;left:300px;top:392px;font:800 30px/1.05 'Nunito',sans-serif;color:#16335e;transform:rotate(-4deg);z-index:4}
+.scal{position:absolute;left:46px;right:34px;top:40px;bottom:36px;background:#fff;padding:34px 38px;font:600 15px/1.55 'Nunito',sans-serif;color:#1d2a44;overflow:auto;border-radius:26px;z-index:3;
+ box-shadow:0 0 0 7px #fff,0 0 0 9px #cfdcec,0 8px 16px rgba(0,0,0,.22);background-image:radial-gradient(#d3e3f7 1.8px,transparent 2.4px);background-size:16px 16px}
+.scal p{margin-bottom:9px}
+.back{position:absolute;left:18px;top:14px;z-index:60;font:inherit;font-size:24px;background:#fff;border:2px solid var(--navy);border-radius:30px;padding:4px 20px;cursor:pointer;display:none}
+.confetti{position:fixed;top:-30px;z-index:90;pointer-events:none;width:14px;height:22px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(720deg)}}
+#rot{display:none;position:fixed;inset:0;z-index:999;background:#16335e;color:#fff;align-items:center;justify-content:center;text-align:center;font-size:30px;padding:30px}
+@media (orientation:portrait) and (max-width:700px){#rot{display:flex}}
+</style>
+</head>
+<body>
+<div id="rot">Please rotate your phone sideways for the best view</div>
+<div id="stage">
+<button class="back" id="back">← back</button>
+<div id="fr">
+
+<section class="page on" id="p1"><div id="p1s"></div>
+  <div class="polaroid" style="left:150px;top:110px;width:390px;height:470px;transform:rotate(-4deg)"><span class="myboy">MY BOY</span><label class="photo" data-key="cover">tap to add his photo<input type="file" accept="image/*" hidden></label></div>
+  <div class="tape" style="left:325px;top:98px;transform:rotate(-6deg)"></div>
+  <div id="nameLine" class="script" style="position:absolute;left:560px;top:430px;width:560px;text-align:center;font-size:38px;z-index:5"></div>
+  <button class="btn" data-go="2" style="left:640px;top:560px">open me</button>
+</section>
+
+<section class="page" id="p2"><div id="p2s"></div>
+  <h1 class="title" id="t2" style="top:44px">Blow out the Candles !!!</h1>
+  <div id="cake" style="position:absolute;left:440px;top:150px;width:400px;z-index:8;cursor:pointer">
+    <img id="cakeLit" src="assets/cake_user.png" style="width:100%;display:block;filter:drop-shadow(0 14px 14px rgba(10,30,70,.3))">
+    <img id="cakeOut" src="assets/cake_out.png" style="filter:drop-shadow(0 14px 14px rgba(10,30,70,.3))">
+    <div id="flames"></div>
+  </div>
+  <div class="hint" id="hint2">tap the cake (or blow into your mic)</div>
+</section>
+
+<section class="page" id="p3"><div id="p3s"></div>
+  <button class="btn" data-go="4" style="left:515px;top:650px">there's more</button>
+</section>
+
+<section class="page" id="p4"><div id="p4s"></div>
+  <h1 class="title" id="t4" style="top:40px;font-family:'Gochi Hand';font-size:68px">Accept your gifts?</h1>
+  <button class="cloud" id="yes" style="left:350px;top:540px">YES</button>
+  <button class="cloud" id="noBtn" style="left:760px;top:540px">NO</button>
+</section>
+
+<section class="page" id="p5"><div id="p5s"></div>
+  <h1 class="title" style="top:36px;font-size:70px">Yay! Choose your gift</h1>
+  <div class="gift" data-go="6" style="left:150px;top:230px;width:300px"><img src="assets/note_clip.png"><span class="tag">Gift 1</span></div>
+  <div class="gift" data-go="7" style="left:520px;top:200px;width:260px"><img src="assets/bouquet.png"><span class="tag">Gift 2</span></div>
+  <div class="gift" data-go="8" style="left:850px;top:230px;width:270px"><img src="assets/gifts_stack.png"><span class="tag">Gift 3</span></div>
+</section>
+
+<section class="page" id="p6"><div id="p6s"></div>
+  <img class="s" src="assets/letter_bg.jpg" style="left:70px;top:15px;width:460px;height:690px;z-index:3;box-shadow:0 12px 26px rgba(0,0,0,.35)">
+  <div class="lt" style="left:118px;top:238px;width:376px;height:346px"><h3 id="dear"></h3><div id="letterBody"></div></div>
+  <div class="pf" style="left:670px;top:90px;width:320px;height:330px;transform:rotate(8deg)"><label class="photo" data-key="l1">add photo<input type="file" accept="image/*" hidden></label></div>
+  <div class="pf" style="left:890px;top:335px;width:320px;height:330px;transform:rotate(-7deg)"><label class="photo" data-key="l2">add photo<input type="file" accept="image/*" hidden></label></div>
+</section>
+
+<section class="page" id="p7"><div id="p7s"></div>
+  <h1 class="title script" style="left:480px;top:40px;text-align:right;right:70px;font-size:44px;white-space:nowrap">Some flowers for you!!</h1>
+  <div class="film" style="left:140px;top:34px;width:262px;transform:rotate(8deg)">
+    <div class="clip" style="background:#16335e"></div>
+    <div class="ph"><label class="photo" data-key="f1">add photo<input type="file" accept="image/*" hidden></label></div>
+    <div class="ph"><label class="photo" data-key="f2">add photo<input type="file" accept="image/*" hidden></label></div>
+    <div class="ph"><label class="photo" data-key="f3">add photo<input type="file" accept="image/*" hidden></label></div>
+  </div>
+</section>
+
+<section class="page" id="p8"><div id="p8s"></div>
+  <div style="position:absolute;left:205px;top:50px;width:853px;height:612px;border-radius:16px;box-shadow:0 20px 40px rgba(10,30,70,.45);z-index:1"></div>
+  <div style="position:absolute;inset:0;z-index:2;clip-path:inset(50px 222px 58px 205px round 16px);background:#cfe1f6"><img src="assets/book_bg.jpg" style="position:absolute;left:0;top:0;width:1280px;height:720px;mix-blend-mode:multiply"></div>
+  <div class="binder" style="left:160px;top:300px;z-index:8"></div><div class="binder" style="left:1010px;top:300px;z-index:8"></div>
+  <div class="ph1" style="left:290px;top:86px;width:214px;height:230px;padding:10px;z-index:4"><label class="photo" data-key="b1">add photo<input type="file" accept="image/*" hidden></label></div>
+  <div class="note n1" style="left:524px;top:84px;width:180px;font-size:15px;z-index:4"><span id="bookL"></span></div>
+  <div class="ph2" style="left:458px;top:262px;width:198px;height:198px;padding:12px;z-index:4"><label class="photo" data-key="b2">add photo<input type="file" accept="image/*" hidden></label></div>
+  <div class="mc" style="left:262px;top:340px;z-index:4;transform:rotate(-4deg)"><b style="font-size:21px">you</b><b style="font-size:21px">are</b><b style="font-size:21px">my</b><b style="font-size:21px">whole</b><b style="font-size:21px">world</b></div>
+  <div class="bdboy" style="left:496px;top:468px;font-size:28px;z-index:4">Birthday<br>Boy</div>
+  <div class="note n2" id="bookNote" style="left:262px;bottom:100px;width:360px;font-size:16px;z-index:4"></div>
+  <div class="scal" id="bookR" style="left:672px;right:290px;top:96px;bottom:92px;padding:22px 26px;font-size:15px;line-height:1.55;z-index:4"></div>
+</section>
+</div></div>
+
+<script>
+/* ====== EDIT THESE ====== */
+const CFG = {
+  name: "My Love",
+  from: "Your Girlfriend",
+  date: "",
+  dear: "Dear Appya,",
+  letter: [
+    "Happy Birthday Love may your all wishes come true. I love you so much and you are the best thing that has ever happened to me.",
+    "I love the way to take care of me I love everything about you. you are just bestest boyfriend in the whole world. I love you and I miss you.",
+    "I just hope this distance will end and we will be together forever waiting for that day. I am sorry if I have done anything that have hurted you but I really love you soooooooooo muchhhhhhhhhh I miss youuu babe"
+  ],
+  signoff: ["Yours,", "Dumboo"],
+  bookLeft:  "The world is a little brighter because you're in it.",
+  bookNote:  "You have a way of making ordinary moments feel special.",
+  bookRight: [
+    "Happy birthday to the person who makes my world brighter. I don't say it enough, but I'm endlessly grateful for the way you have tought me many things, the way you care for me, help me in every situation without getting irritated.",
+    "Watching you grow our Dashon Solutions, chase your dreams, and stay true to yourself inspires me every day. I hope this  year brings you success, peace, and all the joy you give so freely to others.",
+    "Thank you for loving me exactly who I am. I love you more than words could ever express.",
+    "Happy birthday, my love ."
+  ]
+};
+/* ======================== */
+
+/* stickers per page: [file, x, y, width, rotate, z, anim] */
+const L = {
+ p1:[['banner_happy',560,150,470,-2,6,''],['banner_birthday',520,255,560,2,6,''],['bunting',90,-16,470,-2,2,''],
+     ['disco_user',1040,20,130,0,3,'bob'],['disco',20,6,150,0,3,'bob2'],['hat_dot',1135,215,95,12,7,''],['star_navy',560,380,86,-10,5,''],
+     ['heart_navy',1130,430,110,12,5,'bob'],['bear',1040,520,170,0,7,''],['star_chrome',330,580,100,-14,7,'bob2'],['bow_user',130,495,150,-14,8,''],['heart_blue',570,520,96,-8,8,'']],
+ p2:[['disco_user',70,40,120,0,3,'bob'],['party/p02',880,-4,330,0,2,''],['evil_eye',110,430,110,0,3,'bob2'],['bow_user',1070,440,130,-12,3,''],
+     ['star_navy',1010,290,70,12,3,''],['heart_blue',250,240,80,-10,3,'bob'],['disco_blue',1130,170,90,0,3,'bob2']],
+ p3:[['banner_happy',440,24,400,-2,6,''],['banner_birthday',370,100,540,2,6,''],['cake_user',480,300,320,0,5,'bob'],['cat_balloons',1040,220,150,0,7,''],['cat_lick',120,390,170,0,7,''],
+     ['disco_user',50,30,120,0,3,'bob'],['bow_user',1120,36,120,10,3,''],['star_chrome',330,560,90,-12,3,''],['heart_navy',950,560,90,10,3,''],['evil_eye',50,230,90,0,3,'bob2']],
+ p4:[['disco_user',90,110,120,0,3,'bob'],['evil_eye',1060,110,100,0,3,'bob2'],['cat_bouquet',525,125,230,0,6,'bob'],['bow_user',140,420,120,-12,3,''],['gift_blue',1040,330,130,0,5,''],
+     ['star_navy',330,300,70,-12,3,''],['heart_navy',930,300,80,10,3,'bob2'],['star_silver',60,560,90,0,3,'']],
+ p5:[['disco_user',50,40,110,0,3,'bob'],['disco_blue',1110,50,100,0,3,'bob2'],['bow_user',110,520,120,-12,3,''],['evil_eye',1100,500,100,0,3,'bob'],['star_navy',640,610,70,0,3,''],['heart_blue',450,40,60,0,3,''],['star_chrome',820,52,70,0,3,'']],
+ p6:[['party/p04',70,585,200,0,7,''],['star_denim',78,612,60,-12,8,''],['heart_blue',150,648,50,-8,8,''],['camera',560,24,110,6,8,'bob'],['disco_user',1110,30,100,0,3,'bob'],['bow_user',800,400,110,-16,8,'']],
+ p7:[['hat_dot',60,60,110,-14,8,''],['bow_user',40,520,130,-12,8,''],['cat_roses',500,160,300,0,6,'bob'],['disco_user',1100,300,110,0,3,'bob2'],['evil_eye',1100,520,100,0,3,''],['flower_big2',880,560,130,0,3,'bob'],['star_silver',900,330,70,12,3,'']],
+ p8:[['star_denim',150,0,150,-10,9,''],['star_denim2',930,560,130,12,9,''],['disco_user',40,50,110,0,12,'bob'],['evil_eye',1110,60,100,0,12,'bob2'],['bow_user',1100,270,110,10,12,''],['cat_lick',1090,500,140,0,12,'bob2']]
+};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+Object.entries(L).forEach(([pg,arr])=>{
+  $('#'+pg+'s').outerHTML=arr.map(([f,x,y,w,r,z,a])=>`<img class="s ${a}" src="assets/${f}.png" style="left:${x}px;top:${y}px;width:${w}px;z-index:${z};transform:rotate(${r}deg);--r:${r}deg">`).join('');
+});
+$('#p3').insertAdjacentHTML('beforeend','<h1 class="title script" style="top:215px;font-size:56px">Yay!! Happy Birthdayyy</h1>');
+const gp=(x,y,w,h,cls='')=>`<div class="gp ${cls}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background-position:${-x%52}px ${-y%52}px"></div>`;
+const cornerR=(w,h)=>gp(1280-w,720-h,w,h,'torn-corner')+gp(1280,720-.72*h,400,400+.72*h)+gp(1280-w,720,w,400);
+const cornerL=(w,h)=>gp(0,720-h,w,h,'torn-corner-l')+gp(-400,720-.72*h,400,400+.72*h)+gp(0,720,w,400);
+const panel=w=>gp(-400,-400,w+400,1520,'torn-r');
+const ging=(p,html)=>$('#'+p).insertAdjacentHTML('afterbegin',html);
+['p2','p3','p4','p5'].forEach(p=>ging(p,cornerR(380,240)+cornerL(380,240)));
+ging('p1',gp(-400,-400,510,1520));
+ging('p6',cornerR(380,220));
+ging('p7',panel(470)+cornerR(380,220));
+ging('p8',panel(190)+cornerR(380,240));
+
+function fit(){const k=Math.min(innerWidth/1280,innerHeight/720),st=$('#stage');st.style.width=innerWidth/k+'px';st.style.height=innerHeight/k+'px';st.style.transform=`translate(-50%,-50%) scale(${k})`}
+addEventListener('resize',fit);fit();
+
+let cur=1;
+function go(n){
+  $$('.page').forEach(p=>p.classList.remove('on'));$('#p'+n).classList.add('on');cur=n;
+  $('#back').style.display=(n>5&&n<9)?'block':'none';
+  if(n===2)resetCake(); if(n===3)confetti(70);
+}
+$$('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+$('#back').onclick=()=>go(5);
+$('#nameLine').textContent=CFG.name+(CFG.date?' · '+CFG.date:'');
+
+const DEF={cover:'cover',l1:'g1a',l2:'g1b',f1:'g2a',f2:'g2b',f3:'g2c',b1:'g3a',b2:'g3b'};
+function setPhoto(el,src){el.style.backgroundImage=`url(${src})`;[...el.childNodes].forEach(n=>{if(n.nodeType===3)n.textContent=''});}
+$$('.photo').forEach(el=>{
+  const k='bd_'+el.dataset.key, inp=el.querySelector('input');
+  let st=null;try{st=localStorage.getItem(k)}catch(e){}
+  setPhoto(el,st||('assets/photos/'+DEF[el.dataset.key]+'.jpg'));
+  inp.onchange=()=>{const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{
+    const c=document.createElement('canvas'),m=800,sc=Math.min(1,m/Math.max(img.width,img.height));c.width=img.width*sc;c.height=img.height*sc;c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+    const d=c.toDataURL('image/jpeg',.82);setPhoto(el,d);try{localStorage.setItem(k,d)}catch(e){}};img.src=r.result};r.readAsDataURL(f)};
+});
+
+const WK=[[109,62],[139,65],[166,53],[176,45],[199,50],[214,33],[245,48],[253,58],[277,53],[306,53],[327,58]];
+function resetCake(){
+  $('#cake').classList.remove('out');$('#flames').innerHTML=WK.map(([x,y])=>`<div class="smoke" style="left:${x/428*100}%;top:${(y-60)/375*100}%"></div>`).join('');
+  $('#t2').textContent='Blow out the Candles !!!';$('#hint2').style.display='';
+}
+function blow(){const c=$('#cake');if(c.classList.contains('out')||cur!==2)return;c.classList.add('out');$('#t2').textContent='Make a wish...';$('#hint2').style.display='none';confetti(50);setTimeout(()=>go(3),2600)}
+$('#cake').onclick=blow;
+$('#hint2').onclick=async()=>{try{const s=await navigator.mediaDevices.getUserMedia({audio:true}),a=new AudioContext(),an=a.createAnalyser();a.createMediaStreamSource(s).connect(an);const d=new Uint8Array(an.fftSize);
+  (function t(){an.getByteTimeDomainData(d);let m=0;d.forEach(v=>m=Math.max(m,Math.abs(v-128)));if(m>90&&cur===2){blow();s.getTracks().forEach(t=>t.stop());return}requestAnimationFrame(t)})()}catch(e){}};
+
+$('#yes').onclick=()=>go(5);
+let nos=0;
+$('#noBtn').onclick=()=>{nos++;$('#t4').textContent='Please try again';const b=$('#noBtn');b.style.left=(600+Math.random()*420)+'px';b.style.top=(470+Math.random()*130)+'px';b.style.fontSize=Math.max(22,40-nos*4)+'px';setTimeout(()=>$('#t4').textContent='Accept your gifts?',1600)};
+
+$('#dear').textContent=CFG.dear;
+$('#letterBody').innerHTML=CFG.letter.map(p=>`<p>${p}</p>`).join('')+`<p style="text-align:right;font-weight:800;font-size:16px;color:#16335e;line-height:1.35">${CFG.signoff.join('<br>')}</p>`;
+$('#bookL').textContent=CFG.bookLeft;$('#bookNote').textContent=CFG.bookNote;
+$('#bookR').innerHTML=CFG.bookRight.map(p=>`<p>${p}</p>`).join('');
+
+function confetti(n){const c=['#3b78c4','#a9c8f2','#fff','#16335e','#c0c7d6','#f2c94c'];for(let i=0;i<n;i++){const e=document.createElement('div');e.className='confetti';e.style.background=c[i%c.length];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(2+Math.random()*3)+'s';e.style.animationDelay=Math.random()*.8+'s';e.style.borderRadius=i%3?'2px':'50%';document.body.appendChild(e);setTimeout(()=>e.remove(),6500)}}
+
+resetCake();
+</script>
+</body>
+</html>
